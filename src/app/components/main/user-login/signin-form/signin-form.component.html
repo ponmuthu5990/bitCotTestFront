@@ -1,0 +1,43 @@
+<!-- <alert></alert> -->
+<p-growl [life]="3000" styleClass="registerGrowl" [(value)]="msgs"></p-growl>
+<div class="container signupcontainer">
+    <div class="row">
+        <div class="center-block">
+          <div class="col-sm-5 signup-left">
+            <div class="overlay"></div>
+            </div>
+          <div class="col-md-7 col-xs-12 signup-right">
+            <h1 class="heading">{{headingmsg}}</h1>
+            <p class="title">{{title}}</p>
+      
+            <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+              <mat-form-field>
+                  <input matInput placeholder="Username" name="username" [(ngModel)]="model.username" #username="ngModel" 
+                  required />     
+                  <mat-error *ngIf="f.submitted && !username.errors?.pattern && !username.valid"> Username is required </mat-error>
+              </mat-form-field>
+      
+              <mat-form-field>
+                  <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" name="password" 
+                  [(ngModel)]="model.password" #password="ngModel" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d$@$!%*?&]{8,}$" required />
+                  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>  
+                  <mat-error *ngIf="f.submitted && !password.errors?.pattern && !password.valid">Password is required</mat-error>    
+                  <mat-error *ngIf="f.submitted && password.errors?.pattern">Must be minimum eight characters, at least one uppercase letter, <br>one lowercase letter, one number and one special character</mat-error>            
+                </mat-form-field>
+                <mat-error style="margin-top: 2.5%" *ngIf="Unauthorized">{{errorMsg}}</mat-error>
+                <div>
+                  <a (click)="openSignUp()" style="cursor: pointer;">
+                   <span style="padding-left: 0px;" class="hidden-xs">Sign Up Here</span>
+                  </a>
+                </div>
+                <br>
+                <button type="submit" class="waves-effect waves-light button-positive btn-n loginbtn" style="width: 100%;">Login</button>
+              <a [routerLink]="['../forgetpassword']" class="forgotpwd">Forgot Your Password?</a>
+      
+            </form>
+          </div>
+        </div>
+      
+      </div>
+      
+</div>

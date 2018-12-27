@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-8">
+<mat-toolbar class="customtoolbar">Role List</mat-toolbar>
+<button [routerLink]="['add']" mat-mini-fab  color="primary" class="useraddgroupicon">
+    <i class="material-icons addbtn">add</i> 
+  </button> 
+  <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" width="425" acceptButtonStyleClass="acceptButton" rejectButtonStyleClass="rejectButton"></p-confirmDialog>
+<div class="example-container mat-elevation-z8">
+
+    <form class="form-inline genassetform">
+        <div class="example-full-width">
+            <mat-form-field>
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search by">
+            </mat-form-field>
+        </div>
+    </form>  
+
+  <mat-table #table [dataSource]="dataSource">
+
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>      
+    </ng-container>
+
+    <!-- name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell class="tbl_head" *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell class="tbl_head" *matHeaderCellDef> Action </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <a (click)="edit(element)" class="edit cursor-hand"><i class="material-icons">mode_edit</i></a>
+        <a (click)="delete(element.id)" class="clear cursor-hand"><i class="material-icons">clear</i></a>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator #paginator
+                 [pageSize]="5"
+                 [pageSizeOptions]="[5, 10, 20]"
+                 [showFirstLastButtons]="true">
+  </mat-paginator>
+</div>
+</div>
+</div>

@@ -1,0 +1,30 @@
+<div class="sidebar" data-color="purple" id="sidebar">
+        <div class="sidebar-wrapper">
+            <ul class="nav panel-group" id="accordion">
+
+                <!-- <div class="panel panel-default">
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="dashboard active sidebar-li no-drop">
+                    <a [routerLink]="['./']">
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                        <p>Dashboard</p>
+                    </a>
+                    <i class="fa fa-angle-down drop-arrow" aria-hidden="true"></i>
+                </li>
+                </div> -->
+
+                <div class="panel panel-default">
+                <li class="sidebar-li cursor-hand" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                    <a>
+                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        <p>User</p>
+                    </a>
+                    <i class="fa fa-angle-down drop-arrow" aria-hidden="true"></i>
+                </li>
+                <ul class="sub-menu panel-collapse collapse" id="collapse1">
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['admin']"><i class="fa fa-user-md" aria-hidden="true"></i>Manage User</a></li>
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['admin/managerole']"><i class="fa fa-users" aria-hidden="true"></i>Manage Role</a></li>
+                </ul>
+                </div>
+            </ul>
+        </div>
+    </div>

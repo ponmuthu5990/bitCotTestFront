@@ -1,0 +1,100 @@
+.company_logo{
+  float: left;
+  width: 50px;
+  padding:7px 5px;
+  /* height: auto; */
+  height: 59px;
+}
+/* --------------------------------- */
+
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  float: left;
+  min-width: 10rem;
+  padding: .5rem 0;
+  margin: .125rem 0 0;
+  color: #292b2c;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.16) !important;
+  border-radius: .25rem;
+  box-shadow: none;
+  border-color: #eee;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-width: 0;
+  width: 280px !important;
+}
+.user-header{
+padding: 5px;
+}
+.user-image{
+  float: left;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: 2px
+}
+.user-img{
+  margin-right: 10px;
+  margin-top: -2px;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  overflow: hidden;
+}
+
+.user-img img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+.view-profile a{
+  /* background: #0f7486 none repeat scroll 0 0; */
+  border-radius: 30px;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 10px;
+}
+
+.view-profile a:hover{
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(156,39,176,.4);
+  /* background-color: #70a0ab; */
+  color: #fff; 
+}
+
+.main-header .search-box {
+  width: 30%;
+  margin-left: 1%;
+}
+.pull-left {
+float: left;
+}
+.main-header .search-form {
+margin-top: 11px;
+}
+
+.main-search{
+width: 500px;
+float: right;
+padding-top: 15px;
+}
+
+.logo{
+  
+}

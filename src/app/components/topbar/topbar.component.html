@@ -1,0 +1,63 @@
+<nav class="navbar navbar-inverse navbar-wrapper navbar-fixed-top">
+  <div class="toggle-btn" id="toggle-btn" onclick="menuClick()"><i class="fa fa-th" aria-hidden="true"></i></div>
+<a class="navbar-brand company_logo" href="#">
+  <!-- <div *ngIf="headerSet">
+      <img class="logo" [src]="headerSet | safe">
+  </div> -->
+</a>
+  <div class="container">
+    <div class="navbar-header">
+
+      <div class=".container">
+        <div class=" btn-back" (click)="clickSideMenuIcon()">
+          <div class="icon"></div>
+        </div>
+      </div>
+
+      <button type="button" class="navbar-toggle" data-toggle="collapse" (click)="openTopMenu()" >
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+    <div class="navbar-collapse" id="myNavbar" [ngClass]="!topMenuToggle ? 'collapse' : ''">
+    
+      <ul class="nav navbar-nav navbar-right">
+          <li *ngIf="!isLoggedIn && !hideAvatar">
+              <a (click)="openLogin()" style="cursor: pointer;">
+                <img src="../../../assets/images/user.png" class="user-image" alt="User Image">
+                <span style="padding-left: 0px;" class="hidden-xs">Sign In</span>
+              </a>
+            </li>
+            <li *ngIf="currentUser && isLoggedIn && !hideAvatar" class="dropdown user user-menu p-ph-res">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">            
+                  <img [src]="currentUser.profilePictureUrl | safe" class="user-image" alt="">           
+                  <span  style="padding-left: 0px;" class="hidden-xs">{{currentUser.userName}}</span>
+                </a>
+                <ul class="dropdown-menu fixed-menu">
+                  <li class="user-header">
+                    <div class="pull-left user-img">
+                      <img [src]="currentUser.profilePictureUrl | safe" class="img-responsive" alt="User">
+                    </div>
+                    <p class="text-left">{{currentUser.userName}}
+                      <small>{{currentUser.emailId}}</small>
+                    </p>
+                   </li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                    <a style="cursor: pointer;" (click)="logout()">
+                      <i class="fa fa-power-off"></i> Logout</a>
+                  </li>
+                </ul>
+              </li>
+      </ul><!--right side menu end-->
+
+      <div class="nav-search">
+          <input type="text" class="search-expand" placeholder="Search">
+      </div>
+
+    </div>
+  </div>
+</nav>
+

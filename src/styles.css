@@ -1,0 +1,111 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+:root{
+  
+    }
+
+
+/* Table Style */
+
+.mat-table-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 300px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.customtoolbar {
+  background:var(--customtoolbar-backcolor);
+  color: #fff;
+  text-transform: capitalize;
+  margin: 20px 0px 0px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.customtoolbar span {
+  font-weight: 300;
+  padding-left: 10px;
+}
+
+img.profileimg {
+  width: 42px;
+  height: 42px;
+}
+
+.genassetform {
+  padding: 20px;
+}
+
+.genassetform .form-group {
+  padding: 0px 5px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+a.edit {
+  color: #777;
+}
+
+a.clear {
+  color: red;
+}
+
+.mat-checkbox-layout .mat-checkbox-label {
+  font-weight: 200 !important;
+  padding: 15px 0px !important;
+}
+
+app-group-settings-sidebar ul {
+  width: 230px !important;
+}
+
+app-group-settings-sidebar ul li span {
+  padding-left: 10px !important;
+  line-height: 22px !important;
+}
+
+ul.ngxcarouselPoint {
+  display: none;
+}
+
+/* Course Search Form  */
+
+
+.right a i {
+  color: #ddd;
+  font-size: 40px;
+}
+.searchForm .mat-input-underline {
+  border-bottom: 1px solid #fff !important;
+}
+
+.searchForm label.mat-input-placeholder {
+  color: #fff;
+}
+.searchForm .mat-select-arrow {
+  color: #fff !important;
+}
+
+.mat-form-field-hide-placeholder .mat-select-placeholder {
+    color: #fff !important;
+}
+.mat-form-field-hide-placeholder .mat-select-placeholder {
+    color: #fff !important;
+}
+
+mat-radio-button .mat-radio-label-content{
+  font-weight: 400;
+}
+

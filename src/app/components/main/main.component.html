@@ -1,0 +1,25 @@
+<app-topbar [headerLogo]="headerLogo" [logginedUser]="logginedUser" (ontoggleMenu)="toggleSideMenu($event)"></app-topbar>
+
+<div class="clearfix"></div>
+
+<div class="container-fluid">
+
+  <div class="row">
+    <aside class="" [ngClass]="togglemenu ? 'active' : ''">
+        <app-sidebar [logginedUser]="logginedUser"></app-sidebar> 
+    </aside>
+
+    <div class="col-md-9 col-xs-12 after-sidebar">
+      <div class="working-wrapper" (clickOutside)="onClickedOutsideMain($event)">
+        <p-growl [life]="3000" styleClass="registerGrowl" [(value)]="msgs"></p-growl>
+        <router-outlet></router-outlet> 
+      </div>
+      
+    </div>
+    <div class="col-md-12 footer-main">
+        <app-footer class="footer"></app-footer>
+      </div>
+  </div>
+
+  
+</div>

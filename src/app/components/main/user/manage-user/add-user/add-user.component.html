@@ -1,0 +1,61 @@
+<mat-toolbar class="customtoolbar">
+    Add User
+  </mat-toolbar>
+  <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" width="425" acceptButtonStyleClass="acceptButton" rejectButtonStyleClass="rejectButton"></p-confirmDialog>
+  <mat-card>
+    <form name="form" (ngSubmit)="f.form.valid && confirmUser(f)" #f="ngForm">
+      <div class="row">     
+        <div class="col-sm-6 only-live">
+          <mat-form-field class="">
+            <input matInput placeholder="User Name" name="userName" 
+            [(ngModel)]="user.userName" #userName="ngModel" 
+            [pattern]="alphabetPattern" minlength="3" maxlength="30" required>
+            <mat-error class="alert-danger" *ngIf="f.submitted && (userName.value == undefined || userName.value == null || userName.value == '')">User Name Required</mat-error>
+          </mat-form-field>
+        </div>       
+        <div class="col-sm-6 only-live">
+          <mat-form-field class="">
+              <input matInput placeholder="Email Id" name="emailId" 
+              [(ngModel)]="user.emailId" #emailId="ngModel" [pattern]="emailPattern" required> 
+             <mat-error class="alert-danger" *ngIf="emailId.errors?.pattern">Email not valid</mat-error>
+            <mat-error class="alert-danger" *ngIf="f.submitted && (emailId.value == undefined || emailId.value == null || emailId.value == '')">Email Required</mat-error>
+          </mat-form-field>
+        </div>      
+        <div class="col-sm-6 only-live">
+          <mat-form-field class="">
+              <input matInput placeholder="Mobile Number" name="mobilenumber" #mobileNumber="ngModel"
+              [(ngModel)]="user.mobileNumber" [pattern]="numericPattern" minlength="10" maxlength="10">
+              <!-- <mat-error class="alert-danger" *ngIf="mobileNumber.errors?.pattern || mobileNumber.errors?.minlength">Enter a valid Mobile Number</mat-error> -->
+          </mat-form-field>
+        </div>
+  
+            <div class="col-sm-6 only-live">
+              <mat-form-field>
+                <mat-select placeholder="Role" name="role" [(ngModel)]="user.roleId" disableRipple>
+                  <mat-option [value]="item.id" *ngFor="let item of userRoleArray">{{item.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+        <div class="col-sm-6 only-live">
+            <mat-form-field>
+                <input matInput placeholder="Password" [type]="hide ? 'text' : 'password'" name="password" 
+                [(ngModel)]="user.password" #password="ngModel" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d$@$!%*?&]{8,}$" required />
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>  
+                <mat-error *ngIf="f.submitted && !password.errors?.pattern && !password.valid">Password is required</mat-error>    
+                <mat-error *ngIf="f.submitted && password.errors?.pattern">Must be minimum eight characters, at least one uppercase letter, <br>one lowercase letter, one number and one special character</mat-error>            
+              </mat-form-field>
+        </div>
+             </div>
+  
+      <div class="ending-part">
+        <div class="eding-wrapper">
+          <div class="end-buttons">
+            <a (click)="cancel()" class="waves-effect waves-red button-negative btn-n">Cancel</a>
+            <button type="submit" class="waves-effect waves-light button-positive btn-n">Save</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+  

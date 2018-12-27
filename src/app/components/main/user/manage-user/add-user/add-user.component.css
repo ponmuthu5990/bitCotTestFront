@@ -1,0 +1,17 @@
+.alert {
+  padding: 0px;display: inline-block;
+  margin-bottom: -27px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  line-height: 1.2em;
+  transform: translateY(10px);
+  font-size: 75%;
+}
+
+.alert-danger {
+  color: #f44336;
+  background-color: white;
+  /* border-color: #ebccd1; */
+  /* font:inherit; */
+  /* border-bottom: 1px solid #f55a4f; */
+}

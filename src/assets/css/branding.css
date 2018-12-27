@@ -1,0 +1,90 @@
+/* CSS Document */
+:root{
+--body-back: #f6f6f6;
+--side-bar-color:#efefef;
+--side-bar-light-color:#af2c45;
+--navbar-back:#ffffff;
+--nav-icon:#000000;
+--svg-fill:#e0e0ea;
+--button-neg:#2c2c2c; 
+--button-neg-hover:#4d4d4d; 
+--button-pos:#f4770d;
+--button-pos-hov:#e39452;
+--customtoolbar-backcolor:#590b1a;
+--siderbar-font-color:#e5637c;
+--siderbar-font-active:#fff;
+--theme-color:#f4770d;
+--sidebar-icon:#647a82;
+--sidebar-icon-active:#f4770d;
+}
+
+/*logo*/
+/* .cmp-logo{background:url(../icons/logo/logo.png) left top no-repeat;} */
+body{background-color: var(--body-back);}
+.navbar {background-color: var(--navbar-back);border-color: var(--navbar-back);}
+.navbar .navbar-brand {color:  #232323;}
+.navbar .navbar-text,.navbar .navbar-nav > li > a,.navbar .navbar-link {color: var(--nav-icon);}
+.navbar .navbar-nav > li > a .item-icon-fill{fill:var(--svg-fill); }
+
+.navbar .navbar-nav > li > a:hover .item-icon-fill,
+.navbar .navbar-nav > li > a:focus .item-icon-fill,
+.navbar .navbar-nav > .active > a .item-icon-fill,
+.navbar .navbar-nav > .active > a,
+.navbar .navbar-nav > .active > a:hover,
+.navbar .navbar-nav > .active > a:focus,
+.navbar .navbar-nav > li > a:hover,
+.navbar .navbar-nav > li > a:focus,
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus   {color: var(--side-bar-light-color); background-color: var(--navbar-back);fill:var(--side-bar-light-color);}
+
+.navbar .navbar-nav > .open > a,
+.navbar .navbar-nav > .open > a:hover,
+.navbar .navbar-nav > .open > a:focus {color: #7302f0;background-color: var(--navbar-back);}
+
+
+.navbar .navbar-toggle {border-color: var(--navbar-back);}
+.navbar .navbar-toggle:hover,
+.navbar .navbar-toggle:focus {background-color: var(--navbar-back);}
+.navbar .navbar-toggle .icon-bar {background-color: var(--nav-icon);}
+.navbar .navbar-collapse,
+.navbar .navbar-form {border-color: var(--nav-icon);}
+.navbar .navbar-link:hover {color: #7302f0;}
+
+@media (max-width: 767px) {
+  .navbar .navbar-nav .open .dropdown-menu > li > a {color: var(--nav-icon);}
+  .navbar .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar .navbar-nav .open .dropdown-menu > li > a:focus {color: #7302f0;}
+  .navbar .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar .navbar-nav .open .dropdown-menu > .active > a:focus {color: #7302f0;background-color: var(--navbar-back);}
+}
+.btn-back.open .icon,.btn-back.open .icon:before,.btn-back.open .icon:after,.sidebar-color {background-color: var(--side-bar-color);}
+.sidebar-wrapper ul li:hover{color: rebeccapurple;}
+.sidebar-wrapper ul li a{color:var(--siderbar-font-color) !important;}
+.sidebar-wrapper ul li a .item-icon-fill{fill:var( --siderbar-font-color);}
+.sidebar-wrapper ul li a:hover:not(.active),.sidebar-wrapper ul li a.active {background-color: var(--side-bar-color);
+	color:  var(--siderbar-font-active) !important; }
+
+.sidebar-wrapper ul li a.active .item-icon-fill,.sidebar-wrapper ul li a:hover:not(.active) .item-icon-fill{fill:#fff;}
+
+/*meterial button coloring*/
+.button-positive {background-color: var(--button-pos);min-width: 90px!important;}
+.button-positive:hover {background-color: var(--button-pos-hov);text-decoration: none;color: white;}
+.button-positive .waves-ripple {background-color: rgba(255, 255, 255, 0.45);}
+.button-negative {background-color: var(--button-neg) ;min-width: 90px!important;text-decoration: none;}
+.button-negative:hover {background-color: var(--button-neg-hover);text-decoration: none;}
+.button-negative .waves-ripple { background-color: rgba(244, 67, 54, 0.7);}
+.uploading-button-wrapper{border-color: var(--side-bar-light-color); }
+.fill-sidebar-color{fill: var(--side-bar-light-color); }
+
+
+/*basic setting and advanced settings color*/
+.ba-settings>li >a{color:#000;}
+.ba-settings>li.active>a, .ba-settings>li.active>a:focus, .ba-settings>li.active>a:hover {border: 1px solid transparent;
+	border-bottom-color: var(--side-bar-color);color:var(--side-bar-color);}
+.dropdown-menu .working-wrapper ul li.active span{color:var(--side-bar-color)!important; }
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover{color:var(--side-bar-color); }
+/*edit asset page*/
+.colord-heading{background-color: var(--side-bar-color);}
+.colord-heading h3{color: var(--navbar-back);}
+.colord-heading h3 small{color: var(--navbar-back);}

@@ -1,0 +1,66 @@
+.wc-date-container i {
+    color: #0f7486 !important;
+  }
+  
+  .wc-date-container  { 
+    border: 0px solid #0f7486 !important;
+    border-bottom: 1px solid #7b7b7b !important;
+  }
+  
+  .wc-date-container i {
+    color: #0f7486 !important;
+  }
+  
+  .wc-banner { 
+    background: #0f7486 !important;
+  }
+  .wc-details { 
+    background: #0f7486 !important;
+  }
+  .year-title { 
+    background: #0f7486 !important;
+  }
+  .time-view { 
+    border-top: 1px solid #0f7486 !important;
+  }
+  .time-view .time { 
+    color: #0f7486; 
+  }
+  .cuppa-btn-group .button {
+    border: 1px solid #0f7486 !important;
+    color: #fff !important;
+    background: #0f7486 !important;
+  }
+  .button {
+    border: 1px solid #0f7486 !important;
+    background:  #0f7486 !important;
+  }
+  .calendar-days {
+    color: #0f7486e6 !important;
+    background: #fff;
+  }
+  .calendar-day:hover > span {
+    background: #0f7486 !important;
+  }
+  
+  .cal-util .ok {
+    color: #0f7486 !important;
+  }
+
+  .wc-time-sec .time input, .time-view .time input { 
+    color: #0f7486 !important;
+}
+.selected-day span {
+    background: #0f7486 !important;
+  }
+
+.wc-date-container span {
+    color: #7b7b7b !important;
+}
+
+.cuppa-btn-group .active {
+    background: #0f7486 !important;
+    color: #fff !important;
+} 
+
+

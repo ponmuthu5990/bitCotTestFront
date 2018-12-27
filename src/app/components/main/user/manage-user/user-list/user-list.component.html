@@ -1,0 +1,79 @@
+<mat-toolbar class="customtoolbar">User List
+  <span>(Manage User)</span>
+</mat-toolbar> 
+<button [routerLink]="['adduser']" mat-mini-fab color="primary" class="useraddgroupicon">
+  <i class="material-icons addbtn">add</i>
+</button>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" width="425" acceptButtonStyleClass="acceptButton" rejectButtonStyleClass="rejectButton"></p-confirmDialog>
+<div class="example-container mat-elevation-z8">
+
+  <form class="form-inline genassetform" action="">
+    <div class="form-group">
+      <mat-form-field class="example-full-width">
+        <input matInput (input)="applyFilter()" placeholder="Search by"
+        name="searchText" [(ngModel)]="model.searchText" >
+      </mat-form-field>
+    </div>
+ 
+    <!-- <div class="form-group">
+      <mat-form-field>
+        <mat-select placeholder="Status" name="Status" (change)="applyFilter()"  [(ngModel)]="model.status" disableRipple>
+          <mat-option [value]="-1">All</mat-option>          
+          <mat-option [value]="item.statusCode" *ngFor="let item of statuscodes">{{item.status}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div> -->
+
+    <div class="form-group" style="float: right;">
+        <div class="bootstrap-table">
+        <div class="fixed-table-toolbar">
+        <div class="columns columns-right btn-group pull-right">
+        <div class="keep-open btn-group" title="Columns">
+                <button type="button" aria-label="columns" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  <i class="material-icons">list</i> 
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li role="menuitem" [ngStyle]="{'display':column.disabled==true ? 'none' : 'block' }" (click)="onClickColoumn(column,$event)" *ngFor="let column of columns">
+                    <label><input type="checkbox" [value]="column.selected" (change)="onSelectionChange(column,$event)" [checked]="column.selected"> {{column.header}}</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </form>
+  
+  <mat-table #table matSort [dataSource]="dataSource">
+      <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+        <mat-header-cell class="tbl_head" *matHeaderCellDef>{{ column.header }}</mat-header-cell>
+        <mat-cell *matCellDef="let row">        
+          <div *ngIf="column.columnDef == 'actions'">
+              <a (click)="edit(column.cell(row))" class="edit cursor-hand">
+                <i class="material-icons">mode_edit</i>
+              </a> 
+              <a (click)="delete(column.cell(row))" class="clear cursor-hand">
+                <i class="material-icons">clear</i> 
+              </a>
+          </div>
+          <div *ngIf="(column.columnDef == 'package') && (column.cell(row.packageId) != 'undefined')">
+              <a (click)="openDialog(column.cell(row.id))">{{column.cell(row.packageName)}}</a>    
+          </div>
+          <div *ngIf="(column.columnDef == 'package') && (column.cell(row.packageId) == 'undefined')">
+              {{column.cell(row.packageName)}}   
+          </div>
+          <div *ngIf="column.columnDef != 'actions' && column.columnDef != 'package'">
+              {{column.cell(row)}}
+          </div>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row> 
+    </mat-table> 
+  
+  <mat-paginator #paginator
+                 [pageSize]="5"
+                 [pageSizeOptions]="[5, 10, 20]">
+  </mat-paginator>
+</div>

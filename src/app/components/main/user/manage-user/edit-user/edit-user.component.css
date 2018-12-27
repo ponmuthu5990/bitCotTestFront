@@ -1,0 +1,108 @@
+.settings-holder {
+    background: #fff;
+    padding: 20px;
+  }
+  .mat-radio-button ~ .mat-radio-button {
+    padding-right: 16px;
+  }
+  .large{
+    margin-left: 77px;
+    /* margin-bottom: 0px; */
+    margin-top: -19px !important;
+  }
+ 
+  
+  .clearboth{
+    clear: both;
+  }
+  .select-user-role .alert-danger {
+    position: absolute;
+    top: 40px;
+    float: none !important;
+    left: 15px;
+  }
+  .col-sm-6.only-live p {
+    display: flex;
+  }
+  
+  mat-radio-group .mat-radio-label-content {
+    font-weight: 200;
+    padding-right: 20px;
+  }
+  
+  mat-radio-group.mat-radio-group {
+    float: left;
+  }
+  .alert {
+    padding: 0px;display: inline-block;
+    margin-bottom: -27px;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    line-height: 1.2em;
+    transform: translateY(10px);
+    font-size: 75%;
+  }
+  
+  .alert-danger {
+    color: #f44336;
+    background-color: inherit;
+    /* border-color: #ebccd1; */
+    /* border-bottom: 1px solid #f55a4f; */
+  }
+
+
+
+  .profile-img-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.profile-img-container img {width:100%;}
+
+
+.profile-img-container img:hover {
+    opacity: 0.5;
+}
+.profile-img-container:hover a {
+    opacity: 1;
+    top: 0;
+    z-index: 500;
+}
+.profile-img-container:hover a span {
+    top: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+.profile-img-container a {
+    display: block;
+    position: absolute;
+    top: -100%;
+    opacity: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: inherit;
+}
+.mat-form-field-label {
+  top: 1.38125em !important;
+}
+.mat-form-field-wrapper {
+  margin-bottom: 15px;
+}
+.customtag.userRole{
+  margin-bottom: 35px;
+}
+.customtag.userRole .ng2-tag-input__text-input {
+  height: 17px !important;
+}
+.test-class{
+  cursor: pointer;
+}
+.tab-pane {
+  overflow: inherit;
+}
+

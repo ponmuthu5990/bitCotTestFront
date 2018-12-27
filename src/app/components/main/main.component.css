@@ -1,0 +1,15 @@
+.registerGrowl.ui-growl {
+    top:70px !important;
+}
+
+.ui-growl-item-container.ui-state-highlight.ui-growl-message-success{
+    background-color: var(--theme-color) !important;
+    border-color: var(--theme-color) !important;
+}
+
+/* .ui-growl-item-container{
+    background-color: #0f7486 !important;
+    border-color: #0f7486 !important;
+} */
+
+

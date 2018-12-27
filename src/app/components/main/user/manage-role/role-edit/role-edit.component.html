@@ -1,0 +1,29 @@
+<mat-toolbar class="customtoolbar">Role 
+  <!-- <span>(edit)</span> -->
+</mat-toolbar>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" width="425" acceptButtonStyleClass="acceptButton" rejectButtonStyleClass="rejectButton"></p-confirmDialog>
+<mat-card>
+
+  <form class="form-inline genassetform"  name="form" (ngSubmit)="f.form.valid && confirm(f)" #f="ngForm">
+    <div class="col-sm-6 only-live">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Role Name" name="name" [(ngModel)]="model.name"
+        #name="ngModel" [pattern]="alphabetPattern" required>
+        <mat-error class="alert-danger" *ngIf="name.errors?.required">
+            Role Name Required.</mat-error>
+          <mat-error class="alert-danger" *ngIf="name.errors?.pattern">
+              Role Name must be Alphabet only.</mat-error>
+      </mat-form-field>
+    </div>
+
+
+    <div class="ending-part">
+      <div class="eding-wrapper">
+        <div class="end-buttons">
+          <a (click)="cancel()" class="waves-effect waves-red button-negative btn-n">Cancel</a>
+          <button class="waves-effect waves-light button-positive btn-n">{{ model.id === undefined ? 'Save' : 'Update' }}</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</mat-card>

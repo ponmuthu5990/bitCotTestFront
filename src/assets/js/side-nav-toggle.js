@@ -1,0 +1,7 @@
+function menuClick(){
+    $("#sidebar").toggle();
+}
+
+
+
+
